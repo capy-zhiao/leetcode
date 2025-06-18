@@ -1,39 +1,68 @@
-from collections import deque
-from typing import List
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
 
-class Solution:
-    def generateMatrix(self, n: int) -> List[List[int]]:
-        result = [[0]*n for i in range(n)]
-        top = 0
-        bottom = n-1
-        left = 0
-        right = n-1
-        num =1
-        while top <= bottom and left <= right:
-            for i in range(left, right+1):
-                result[left][i] = num
-                num += 1
-                print("1------", num, left, right)
-            top+=1
+class MyLinkedList:
 
-            for i in range(top, bottom+1):
-                result[i][right] = num
-                num += 1
-                print("2------", num, left, right)
-            right -= 1
+    def __init__(self):
+        self.head = None
+        self.size = 0
 
-            for i in range(right, left-1, -1):
-                result[bottom][i] = num
-                num+=1
-                print("3------", num, left, right)
-            bottom -= 1
+    def get(self, index: int) -> int:
+        if index<0 or index>=self.size:
+            return -1
 
-            for i in range(bottom, top-1, -1):
-                result[i][left] = num
-                num+=1
-                print("4------", num, left, right)
-            left += 1
-        print(result)
-        return result
-S = Solution()
-S.generateMatrix(4)
+        cur = self.head
+        for _ in range(index):
+            cur = cur.next
+        return cur.val
+
+
+    def addAtHead(self, val: int) -> None:
+        newnode = ListNode(val)
+        newnode.next = self.head
+        self.head = newnode
+        self.size += 1
+
+    def addAtTail(self, val: int) -> None:
+        newnode = ListNode(val)
+        cur = self.head
+        if cur == None:
+            self.head = newnode
+        else:
+            while cur.next:
+                cur = cur.next
+            cur.next = newnode
+            self.size += 1
+
+    def addAtIndex(self, index: int, val: int) -> None:
+        if(index == self.size):
+            self.addAtTail(val)
+        elif(index > self.size):
+            return
+        elif (index == 0):
+            self.addAtHead(val)
+        else:
+            cur = self.head
+            newnode = ListNode(val)
+            for _ in range(index-1):
+                cur = cur.next
+            newnode.next = cur.next
+            cur.next = newnode
+            self.size += 1
+
+    def deleteAtIndex(self, index: int) -> None:
+        if index < 0 or index >= self.size:
+            return
+        elif index == 0:
+            self.head = self.head.next
+            self.size -= 1
+        else:
+            cur = self.head
+            for _ in range(index - 1):
+                cur = cur.next
+            cur.next = cur.next.next
+            self.size -= 1
+
+MyLinkedList().addAtHead(5)
