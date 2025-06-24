@@ -1,68 +1,65 @@
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
-
-class MyLinkedList:
-
-    def __init__(self):
-        self.head = None
-        self.size = 0
-
-    def get(self, index: int) -> int:
-        if index<0 or index>=self.size:
-            return -1
-
-        cur = self.head
-        for _ in range(index):
-            cur = cur.next
-        return cur.val
+from typing import List
 
 
-    def addAtHead(self, val: int) -> None:
-        newnode = ListNode(val)
-        newnode.next = self.head
-        self.head = newnode
-        self.size += 1
+class Solution:
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        nums.sort()
+        result = []
+        length = len(nums)
+        print(nums)
 
-    def addAtTail(self, val: int) -> None:
-        newnode = ListNode(val)
-        cur = self.head
-        if cur == None:
-            self.head = newnode
-        else:
-            while cur.next:
-                cur = cur.next
-            cur.next = newnode
-            self.size += 1
+        for i in range(length - 2):
+            # 去重：跳过重复的 i
+            if i > 0 and nums[i] == nums[i - 1]:
+                continue
 
-    def addAtIndex(self, index: int, val: int) -> None:
-        if(index == self.size):
-            self.addAtTail(val)
-        elif(index > self.size):
-            return
-        elif (index == 0):
-            self.addAtHead(val)
-        else:
-            cur = self.head
-            newnode = ListNode(val)
-            for _ in range(index-1):
-                cur = cur.next
-            newnode.next = cur.next
-            cur.next = newnode
-            self.size += 1
+            left = i + 1
+            right = length - 1
 
-    def deleteAtIndex(self, index: int) -> None:
-        if index < 0 or index >= self.size:
-            return
-        elif index == 0:
-            self.head = self.head.next
-            self.size -= 1
-        else:
-            cur = self.head
-            for _ in range(index - 1):
-                cur = cur.next
-            cur.next = cur.next.next
-            self.size -= 1
+            print("i = %d, left = %d, right = %d" % (i, left, right))
 
-MyLinkedList().addAtHead(5)
+            while left < right:
+                print("nums[i] = %d, nums[left] = %d, nums[right] = %d" % (nums[i], nums[left], nums[right]))
+                sum_all = nums[i] + nums[left] + nums[right]
+                print("sum_all = %d" % sum_all)
+                if sum_all > 0:
+                    right -= 1
+                    print("sum_all > 0, left = %d, right = %d" % (left, right))
+                    continue
+                elif sum_all < 0 :
+                    left += 1
+                    print("sum_all < 0, left = %d, right = %d" % (left, right))
+                    continue
+                else:
+                    triplet = [nums[i], nums[left], nums[right]]
+                    result.append(triplet)
+                    print(triplet)
+                    print(result)
+                    right -= 1
+                    left += 1
+                    break
+                    # # 找到一个三元组
+                    # result.append([nums[i], nums[left], nums[right]])
+                    # print(result)
+                    # # 跳过重复的 left 元素
+                    # while left < right and nums[left] == nums[left + 1]:
+                    #     left += 1
+                    #     print("left < right, left = %d, right = %d" % (left, right))
+                    #     print("nums[left] = %d" % nums[left])
+                    #     print("nums[left + 1] = %d" % nums[left + 1])
+                    # # 跳过重复的 right 元素
+                    # while left < right and nums[right] == nums[right - 1]:
+                    #     right -= 1
+                    #     print("right < left, right = %d, left = %d, right = %d" % (right, left, right))
+                    #     print("nums[right] = %d" % nums[right])
+                    #     print("nums[right - 1] = %d" % nums[right - 1])
+                    # # 移动指针继续查找
+                    # left += 1
+                    # right -= 1
+                    # print("left = %d" % left)
+                    # print("right = %d" % right)
+
+        return result
+
+my = Solution()
+print(my.threeSum([0, 0, 0, 0]))
