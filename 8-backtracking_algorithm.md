@@ -34,37 +34,44 @@
 
 ![image-20250722173042432](assets/image-20250722173042432.png)
 
-## 40
+## 40[Combination Sum II](https://leetcode.com/problems/combination-sum-ii/)
 
+![image-20250722235908520](assets/image-20250722235908520.png)
 
+## 216[Combination Sum III](https://leetcode.com/problems/combination-sum-iii/)
 
-## 216
-
-
+![image-20250723000941850](assets/image-20250723000941850.png)
 
 # 分割
 
-## 131
+## 131[Palindrome Partitioning](https://leetcode.com/problems/palindrome-partitioning/)
 
+![image-20250723231648797](assets/image-20250723231648797.png)
 
+## 93[Restore IP Addresses](https://leetcode.com/problems/restore-ip-addresses/)
 
-## 93
+| 步骤     | 内容                           |
+| -------- | ------------------------------ |
+| 剪枝     | 长度不在 4~12 之间直接返回空   |
+| 回溯     | 枚举每段 1~3 个字符            |
+| 判断合法 | 每段不能大于 255，不能有前导零 |
+| 终止条件 | 切满 4 段并且用完所有字符      |
 
-
+![image-20250723234510798](assets/image-20250723234510798.png)
 
 # 子集
 
-## 78
+## 78[Subsets](https://leetcode.com/problems/subsets/)
 
+![image-20250726105125818](assets/image-20250726105125818.png)
 
+## 90[Subsets II](https://leetcode.com/problems/subsets-ii/)
 
-## 90
-
-
+![image-20250726110520673](assets/image-20250726110520673.png)
 
 # 排列
 
-## 46
+## 46[Permutations](https://leetcode.com/problems/permutations/)
 
 
 
