@@ -11,6 +11,6 @@
 - 📐 [栈与队列（Stack & Queue）](./5-栈·与队列.md)
 - 👣 [双指针法（Two Pointers）](./6-双指针法.md)
 - 🌳 [二叉树（Binary Tree）](./7-binary_tree.md)
-
+- [回溯算法（backtracing）](./8-backtracking_algorithm.md)
 ---
 
