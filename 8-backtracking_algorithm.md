@@ -73,15 +73,93 @@
 
 ## 46[Permutations](https://leetcode.com/problems/permutations/)
 
+At each recursion level, it loops through all unused numbers.
 
+It **adds one number** to the current path (`path.append()`), marks it as used, and goes deeper.
 
-## 47
+When the path reaches the full length, it’s added to the result.
 
+Then it **backtracks**: removes the last number (`path.pop()`), marks it unused, and continues the loop to try the next number.
 
+![image-20250812153014020](assets/image-20250812153014020.png)
+
+## 47[Permutations II](https://leetcode.com/problems/permutations-ii/)
+
+nums.sort()!!!!!!!!
+
+if i > 0 and nums[i] == nums[i - 1] and not used[i - 1] !!!!!
+
+![image-20250812154404554](assets/image-20250812154404554.png)
 
 # 棋盘
 
-## 51
+## 51[N-Queens](https://leetcode.com/problems/n-queens/)
+
+皇后不能出现在：
+
+1. 同一行 ❌
+
+1. 每一行只能放一个皇后。
+2. 可以用**回溯每行放置**的方式，从第 0 行递归放到第 n-1 行。
+
+2. 同一列 ❌
+
+- 如果你在列 j 放了一个皇后，就不能在其他行放在列 j。
+- 用一个 `set` 或布尔数组来记录列是否被占用。
+
+3. 同一主对角线 ❌（↘︎）
+
+- 所有在同一主对角线上的格子满足：`row - col` 相同
+- 用一个 `set` 来记录 `row - col` 是否已被占用
+
+4. 同一副对角线 ❌（↙︎）
+
+- 所有在同一副对角线上的格子满足：`row + col` 相同
+- 同样用一个 `set` 来记录 `row + col` 是否被占用
+
+```python
+class Solution:
+    def isValid(self, row: int, col: int, board: List[str]) -> bool:
+        for i in range(row):
+            if board[i][col] == 'Q':
+                return False
+        
+        i, j = row - 1, col - 1# 左上
+        while i >= 0 and j >= 0:
+            if board[i][j] == 'Q':
+                return False 
+            i -= 1
+            j -= 1
+
+        i, j = row - 1, col + 1
+        while i >= 0 and j < len(board):
+            if board[i][j] == 'Q':
+                return False  # 右上
+            i -= 1
+            j += 1
+        
+        return True
+
+    def backtracing(self, n: int, row: int, board: List[str], result: List[List[str]]) -> None:
+        if row == n:
+            result.append(board[:])
+            return
+
+        for col in range(n):
+            if self.isValid(row, col, board):
+                board[row] = board[row][:col] + 'Q' + board[row][col+1:]
+                self.backtracing(n, row + 1, board, result)
+                board[row] = board[row][:col] + '.' + board[row][col+1:]
+
+    def solveNQueens(self, n: int) -> List[List[str]]:
+        result = []
+        board = ['.' * n for _ in range(n)]
+
+        self.backtracing(n, 0, board, result)
+        return [[''.join(row) for row in solution] for solution in result]
+
+            
+```
 
 
 
