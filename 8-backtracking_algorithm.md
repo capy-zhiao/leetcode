@@ -163,15 +163,10 @@ class Solution:
 
 
 
-## 37
-
-
-
 # remain
 
-## 491
+## 491[Non-decreasing Subsequences](https://leetcode.com/problems/non-decreasing-subsequences/)
 
 
 
-## 332
-
+![image-20250818135143358](assets/image-20250818135143358.png)
