@@ -35,17 +35,34 @@ use five and ten to solute
 
 # medium
 
-## 376
+## 376[Wiggle Subsequence](https://leetcode.com/problems/wiggle-subsequence/)
 
+When the sign of `diff` is different from the previously recorded sign (from up → down or down → up), increase the count by 1 and update the "previous sign".
 
+The initial length is at least 1; when the first non-zero difference appears, set the length to 2.
 
-## 738
+![image-20250819150921725](assets/image-20250819150921725.png)
 
+## 738[Monotone Increasing Digits](https://leetcode.com/problems/monotone-increasing-digits/)
 
+```python
+Convert the integer to a string
+Traverse the string from right to left
+If the current character is smaller than the previous one, 
+	it means we need to modify the previous character
+Decrease the previous character by 1
+Set all characters after the modified position to 9
+Convert the list back to a string, then convert the string to an integer and return it
+```
 
-## 122
+![image-20250819155943499](assets/image-20250819155943499.png)
 
+## 122[Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/)
 
+Easy to write if you know the principle.
+ As long as `prices[i] > prices[i-1]`, add the difference `prices[i] - prices[i-1]` to the profit.
+
+![image-20250819163415793](assets/image-20250819163415793.png)
 
 ## 714
 
