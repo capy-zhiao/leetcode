@@ -95,15 +95,23 @@ For the second part, if there are still some operations left, then:
 
 
 
-## 134
+## 134[Gas Station](https://leetcode.com/problems/gas-station/)
 
+First, we should check whether the total sum of gas is greater than the total sum of cost. If not, return -1.
+ Then, since there is a unique solution, if the sum of one segment is less than 0, the sum of the other segment must be greater than 0, so we must start from the first station of the other segment.
 
+![image-20250825153449573](assets/image-20250825153449573.png)
 
-## 135
+## hard 135[Candy](https://leetcode.com/problems/candy/)
 
+If `ratings[i] > ratings[i - 1]`, child *i* must receive more candies than child *i - 1*, so we set
+ `candy[i] = candy[i - 1] + 1`.
 
+If `ratings[i] > ratings[i + 1]`, then child *i* needs to have more candies than child *i + 1*. At this point, the candy count for child *i* should be the maximum between its current value (from the left-to-right pass) and `candy[i + 1] + 1` (from the right-to-left pass).
 
+By always taking the maximum, we satisfy the local condition (higher-rated child has more candies than neighbors). As a result, the global condition is guaranteed: every higher-rated child among adjacent pairs receives more candies.
 
+![image-20250825160739125](assets/image-20250825160739125.png)
 
 ## 860[Lemonade Change](https://leetcode.com/problems/lemonade-change/)
 
