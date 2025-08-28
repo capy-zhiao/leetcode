@@ -121,19 +121,57 @@ use five and ten to solute
 
 
 
-## 406
+## 406[Queue Reconstruction by Height](https://leetcode.com/problems/queue-reconstruction-by-height/)
 
+## Queue Reconstruction - Core Approach
 
+### Key Insight
 
+Each person `[height, count]` where count = number of people in front with height ≥ current person's height
 
+### Algorithm Strategy
 
-## 452
+1. Greedy Strategy: Process tall people first
 
+   - Reason: Short people won't affect tall people's count values
+   - When heights are equal, process smaller count first
 
+2. Sorting
 
-## 435
+   ```
+   (-height, count)
+   ```
 
+   - Height in descending order, count in ascending order
 
+3. Insertion
+
+   ```
+   result.insert(count, person)
+   ```
+
+   - Each person's insertion position = their count value
+   - Later people will "push" earlier people backward
+
+![image-20250828161118182](assets/image-20250828161118182.png)
+
+## 452[Minimum Number of Arrows to Burst Balloons](https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/)
+
+**Sort by end position** - Balloons ending earliest are most "urgent"
+
+**Always shoot at the end of earliest-ending balloon** - This can hit more balloons
+
+**Skip hit balloons, repeat the process**
+
+![image-20250828162554173](assets/image-20250828162554173.png)
+
+![image-20250828162816800](assets/image-20250828162816800.png)
+
+## 435[Non-overlapping Intervals](https://leetcode.com/problems/non-overlapping-intervals/)
+
+**Keep intervals that end earliest** - they leave more room for future intervals
+
+![image-20250828163622487](assets/image-20250828163622487.png)
 
 ## 763
 
