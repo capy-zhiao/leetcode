@@ -16,7 +16,7 @@ The only difficulty lies in how to derive the global optimum from local optima.
 
 
 
-## 376[Wiggle Subsequence](https://leetcode.com/problems/wiggle-subsequence/)
+## 376 [Wiggle Subsequence](https://leetcode.com/problems/wiggle-subsequence/)
 
 When the sign of `diff` is different from the previously recorded sign (from up → down or down → up), increase the count by 1 and update the "previous sign".
 
@@ -26,7 +26,7 @@ The initial length is at least 1; when the first non-zero difference appears, se
 
 
 
-## 53[Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
+## 53 [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
 
 keep two variables:
 
@@ -45,7 +45,7 @@ At the end, `best` is the answer.
 
 
 
-## 122[Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/)
+## 122 [Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/)
 
 Easy to write if you know the principle.
  As long as `prices[i] > prices[i-1]`, add the difference `prices[i] - prices[i-1]` to the profit.
@@ -54,7 +54,7 @@ Easy to write if you know the principle.
 
 
 
-## 55[Jump Game](https://leetcode.com/problems/jump-game/)
+## 55 [Jump Game](https://leetcode.com/problems/jump-game/)
 
 ```python
 nums = [2,3,1,1,4]`
@@ -70,7 +70,7 @@ Begin: `farthest = 0
 
 
 
-## 45[Jump Game II](https://leetcode.com/problems/jump-game-ii/)
+## 45 [Jump Game II](https://leetcode.com/problems/jump-game-ii/)
 
 Example (`[2,3,1,1,4]`):
 
@@ -82,7 +82,9 @@ Example (`[2,3,1,1,4]`):
 
 ![image-20250822173836683](assets/image-20250822173836683.png)
 
-## 1005[Maximize Sum Of Array After K Negations](https://leetcode.com/problems/maximize-sum-of-array-after-k-negations/)
+
+
+## 1005 [Maximize Sum Of Array After K Negations](https://leetcode.com/problems/maximize-sum-of-array-after-k-negations/)
 
 For the first part, we should sort the array and flip all negative numbers to positive.
 
@@ -95,14 +97,16 @@ For the second part, if there are still some operations left, then:
 
 
 
-## 134[Gas Station](https://leetcode.com/problems/gas-station/)
+## 134 [Gas Station](https://leetcode.com/problems/gas-station/)
 
 First, we should check whether the total sum of gas is greater than the total sum of cost. If not, return -1.
  Then, since there is a unique solution, if the sum of one segment is less than 0, the sum of the other segment must be greater than 0, so we must start from the first station of the other segment.
 
 ![image-20250825153449573](assets/image-20250825153449573.png)
 
-## hard 135[Candy](https://leetcode.com/problems/candy/)
+
+
+## HARD 135 [Candy](https://leetcode.com/problems/candy/)
 
 If `ratings[i] > ratings[i - 1]`, child *i* must receive more candies than child *i - 1*, so we set
  `candy[i] = candy[i - 1] + 1`.
@@ -113,7 +117,9 @@ By always taking the maximum, we satisfy the local condition (higher-rated child
 
 ![image-20250825160739125](assets/image-20250825160739125.png)
 
-## 860[Lemonade Change](https://leetcode.com/problems/lemonade-change/)
+
+
+## 860 [Lemonade Change](https://leetcode.com/problems/lemonade-change/)
 
 use five and ten to solute
 
@@ -121,15 +127,15 @@ use five and ten to solute
 
 
 
-## 406[Queue Reconstruction by Height](https://leetcode.com/problems/queue-reconstruction-by-height/)
+## 406 [Queue Reconstruction by Height](https://leetcode.com/problems/queue-reconstruction-by-height/)
 
-## Queue Reconstruction - Core Approach
+### Queue Reconstruction - Core Approach
 
-### Key Insight
+#### Key Insight
 
 Each person `[height, count]` where count = number of people in front with height ≥ current person's height
 
-### Algorithm Strategy
+#### Algorithm Strategy
 
 1. Greedy Strategy: Process tall people first
 
@@ -155,7 +161,9 @@ Each person `[height, count]` where count = number of people in front with heigh
 
 ![image-20250828161118182](assets/image-20250828161118182.png)
 
-## 452[Minimum Number of Arrows to Burst Balloons](https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/)
+
+
+## 452 [Minimum Number of Arrows to Burst Balloons](https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/)
 
 **Sort by end position** - Balloons ending earliest are most "urgent"
 
@@ -167,23 +175,38 @@ Each person `[height, count]` where count = number of people in front with heigh
 
 ![image-20250828162816800](assets/image-20250828162816800.png)
 
-## 435[Non-overlapping Intervals](https://leetcode.com/problems/non-overlapping-intervals/)
+
+
+## 435 [Non-overlapping Intervals](https://leetcode.com/problems/non-overlapping-intervals/)
 
 **Keep intervals that end earliest** - they leave more room for future intervals
 
 ![image-20250828163622487](assets/image-20250828163622487.png)
 
-## 763
+
+
+## 763 [Partition Labels](https://leetcode.com/problems/partition-labels/)
+
+The last appearance of a letter determines the smallest boundary of the segmented block containing it!
+
+Iterate through the string and maintain the furthest position that the current split block must reach
+When scanning to the farthest position, you can split it
+
+![image-20250829162832982](assets/image-20250829162832982.png)
 
 
 
-## 56
+## 56 [Merge Intervals](https://leetcode.com/problems/merge-intervals/)
+
+Sort  by x[0]!
+
+![image-20250829164934485](assets/image-20250829164934485.png)
 
 
 
 
 
-## 738[Monotone Increasing Digits](https://leetcode.com/problems/monotone-increasing-digits/)
+## 738 Monotone Increasing Digits](https://leetcode.com/problems/monotone-increasing-digits/)
 
 ```python
 Convert the integer to a string
@@ -197,12 +220,3 @@ Convert the list back to a string, then convert the string to an integer and ret
 
 ![image-20250819155943499](assets/image-20250819155943499.png)
 
-## 
-
-## 968
-
-
-
-
-
-## 
