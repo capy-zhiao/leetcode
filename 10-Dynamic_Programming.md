@@ -12,7 +12,12 @@
 4. 确定遍历顺序
 5. 举例推导dp数组
 
-## 507
+## 507 [Perfect Number](https://leetcode.com/problems/perfect-number/)
+
+If i is the factor of num, then num/i is also a factor
+Just traverse to √num and find a pair of factors each time
+
+![image-20250829170906082](assets/image-20250829170906082.png)
 
 
 
