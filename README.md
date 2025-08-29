@@ -11,6 +11,6 @@
 - 🌳 [二叉树（Binary Tree）](./7-binary_tree.md)
 - 🎯 [回溯算法（Backtracking）](./8-backtracking_algorithm.md)
 - 🦊 [贪心算法（Greedy Algorithm）](./9-Greedy_Algorithm.md)
-- [动态规划（Dynamic Programming）](./10-Dynamic_Programming.md)
+- ⚡ [动态规划（Dynamic Programming）](./10-Dynamic_Programming.md)
 ---
 
