@@ -63,11 +63,25 @@ If the starting point is an obstacle, return directly to 0.
 
 
 
-## 343
+## 343 [Integer Break](https://leetcode.com/problems/integer-break/)
+
+emmmm
+
+![image-20250902193459633](assets/image-20250902193459633.png)
 
 
 
-## 96
+## 96 [Unique Binary Search Trees](https://leetcode.com/problems/unique-binary-search-trees/)
+
+dp[i] = Σ(dp[j-1] × dp[i-j])  j is from 1 to n
+
+`j` is the destination of root
+
+`dp[j-1]` is the number of left-tree
+
+`dp[i-j]` is the number of right-tree
+
+![image-20250902201300539](assets/image-20250902201300539.png)
 
 
 
