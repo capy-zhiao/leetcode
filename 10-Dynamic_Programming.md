@@ -87,6 +87,128 @@ dp[i] = Σ(dp[j-1] × dp[i-j])  j is from 1 to n
 
 # 背包问题
 
+![416.分割等和子集1](assets/68747470733a2f2f66696c65312e6b616d61636f6465722e636f6d2f692f616c676f2f32303231303131373137313330373430372e706e67.png)
+
+https://github.com/youngyangyang04/leetcode-master/blob/master/problems/%E8%83%8C%E5%8C%85%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%8001%E8%83%8C%E5%8C%85-1.md
+
+## 01背包
+
+### 416 [Partition Equal Subset Sum](https://leetcode.com/problems/partition-equal-subset-sum/)
+
+**DP思路：**
+
+```
+dp[i] = 能否凑出和为 i 的子集
+```
+
+**状态转移：** 对每个数字 `num`，更新所有可能的和：
+
+```
+如果之前能凑出 dp[i-num]，那么现在就能凑出 dp[i]
+```
+
+![image-20250903171242625](assets/image-20250903171242625.png)
+
+
+
+### 1049 [Last Stone Weight II](https://leetcode.com/problems/last-stone-weight-ii/)
+
+it can be splited into 2 parts to be divided.
+
+![image-20250903174042627](assets/image-20250903174042627.png)
+
+
+
+### 494 [Target Sum](https://leetcode.com/problems/target-sum/)
+
+```
+nums = [1,1,1,1,1], target = 3
+```
+
+```
+dp[j] = 和为 j 的方案数
+ 初始化：dp[0] = 1
+```
+
+逐个加 1：
+
+- 第 1 个 1：
+  - `dp[1] += dp[0]` → `dp[1] = 1`
+- 第 2 个 1：
+  - `dp[1] += dp[0]` → `dp[1] = 2`
+  - `dp[2] += dp[1]` → `dp[2] = 1`
+- 第 3 个 1：
+  - 更新后 `dp[1] = 3, dp[2] = 3, dp[3] = 1`
+- 第 4 个 1：
+  - 更新后 `dp[1] = 4, dp[2] = 6, dp[3] = 4, dp[4] = 1`
+- 第 5 个 1：
+  - 更新后 `dp[1] = 5, dp[2] = 10, dp[3] = 10, dp[4] = 5, dp[5] = 1`
+
+最终：
+ `dp[4] = 5`
+
+![image-20250903185551765](assets/image-20250903185551765.png)
+
+
+
+### 474
+
+
+
+
+
+
+
+
+
+## 完全背包
+
+### 518
+
+
+
+
+
+
+
+### 377
+
+
+
+
+
+
+
+### 70
+
+
+
+
+
+
+
+### 322
+
+
+
+
+
+
+
+### 279
+
+
+
+
+
+
+
+### 139
+
+
+
+
+
 
 
 
