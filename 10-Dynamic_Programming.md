@@ -151,37 +151,28 @@ dp[j] = 和为 j 的方案数
 
 
 
-### 474
-
-
-
-
-
-
-
-
-
 ## 完全背包
 
-### 518
+### 518 [Coin Change II](https://leetcode.com/problems/coin-change-ii/)
+
+dp[x] += dp[x - c] 
+
+假设我们决定用一枚硬币 `c` 来组成 `x`，那剩下的金额就是 `x - c`。
+ 也就是说，**每一种凑成 `x - c` 的方法，都能在最后加上一枚 `c`，从而形成一种新的凑成 `x` 的方法**。
+
+`dp[x]` 里原来已经有一些方法（可能是用别的硬币凑的）。
+
+现在我们再加上「从 `x-c` 转移过来的那些方法」，就得到新的总数。
+
+![image-20250908164831384](assets/image-20250908164831384.png)
 
 
 
 
 
+### 377 [Combination Sum IV](https://leetcode.com/problems/combination-sum-iv/)
 
-
-### 377
-
-
-
-
-
-
-
-### 70
-
-
+![image-20250908165636513](assets/image-20250908165636513.png)
 
 
 
@@ -223,3 +214,22 @@ dp[j] = 和为 j 的方案数
 
 #  子序列
 
+
+
+# DP problem from NeetCode
+
+## [Climbing Stairs](https://neetcode.io/problems/climbing-stairs?list=neetcode150)
+
+<img src="assets/image-20250925174639451.png" alt="image-20250925174639451" style="width:50%;" />
+
+## [Min Cost Climbing Stairs](https://neetcode.io/problems/min-cost-climbing-stairs?list=neetcode150)
+
+<img src="assets/image-20250925181417416.png" alt="image-20250925181417416" style="width:70%;" />
+
+## [House Robber][https://neetcode.io/problems/house-robber?list=neetcode150]
+
+<img src="assets/image-20250925183759334.png" alt="image-20250925183759334" style="width:67%;" />
+
+## [House Robber II](https://neetcode.io/problems/house-robber-ii?list=neetcode150)
+
+![image-20250925184939537](assets/image-20250925184939537.png)
